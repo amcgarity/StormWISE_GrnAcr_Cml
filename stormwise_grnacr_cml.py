@@ -1,24 +1,24 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Aug  7 16:33:12 2016
+Created on Sept. 20, 2016
 
 @author: arthur
 
-provide command line input and output for stormwise_tmdl
+provide command line input and output for the StormWISE_GrnAcr model
 """
 import yaml
 import os
 from copy import deepcopy
-from StormWISE_TMDL_Engine.stormwise_tmdl import stormwise
-from StormWISE_TMDL_Engine.stormwise_tmdl import evaluate_solution
-from StormWISE_TMDL_Engine.stormwise_tmdl_benefits_and_bounds import benefit_slopes
-from StormWISE_TMDL_Engine.stormwise_tmdl_benefits_and_bounds import upper_bounds
-from StormWISE_TMDL_Engine.stormwise_tmdl_benefits_and_bounds import convert_benefit_units
-from StormWISE_TMDL_Engine.stormwise_tmdl_benefits_and_bounds import format_and_convert_benefit_dict
+from StormWISE_GrnAcr_Engine.stormwise_grnacr import stormwise
+from StormWISE_GrnAcr_Engine.stormwise_grnacr import evaluate_solution
+from StormWISE_GrnAcr_Engine.stormwise_grnacr_benefits_and_bounds import benefit_slopes
+from StormWISE_GrnAcr_Engine.stormwise_grnacr_benefits_and_bounds import upper_bounds
+from StormWISE_GrnAcr_Engine.stormwise_grnacr_benefits_and_bounds import convert_benefit_units
+from StormWISE_GrnAcr_Engine.stormwise_grnacr_benefits_and_bounds import format_and_convert_benefit_dict
 from Arts_Python_Tools.tools import multiply_dict_by_constant
 from Arts_Python_Tools.tools import format_dict_as_strings
 
-amplPath = "/Applications/amplide.macosx64/ampl"  # note: you must also set the solver path in stormwise_tmdl.run
+amplPath = "/Applications/amplide.macosx64/ampl"  # note: you must also set the solver path in stormwise_grnacr.run
        
 def print_output(solutionDict,benefitUnits,benefitConvertUnits):                              
     benTotsByBenefit = solutionDict['benTotsByBenefit']
@@ -158,7 +158,7 @@ def print_output(solutionDict,benefitUnits,benefitConvertUnits):
 
 
 def main():
-    print "\n\nStormWISE_TMDL COMMAND LINE VERSION\n"
+    print "\n\nStormWISE_GrnAcr COMMAND LINE VERSION\n"
     print "Instructions:"
     print "1. Before running StormWISE, you must prepare an input text file in YAML format"
     print "   and you will specify the name of that file below"
@@ -211,7 +211,7 @@ def main():
     print "\n\n\nUPPER LIMITS ON BENEFITS:\n"
     print_output(upperBoundSolutionDict,benefitUnits,benefitConvertUnits)
 
-    #os.chdir("StormWISE_TMDL_Engine")  # change directory to the engine
+    #os.chdir("StormWISE_GrnAcr_Engine")  # change directory to the engine
 # Load the benefitDict using console input:
     while True:
         benefitDict = {}

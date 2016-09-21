@@ -1,20 +1,20 @@
 reset;
-model stormwise_tmdl.mod;
-data stormwise_tmdl.dat;
-data stormwise_tmdl_benefits.dat;
+model stormwise_grnacr.mod;
+data stormwise_grnacr.dat;
+data stormwise_grnacr_benefits.dat;
 option solver "/Applications/amplide.macosx64/minos";
 solve;
 
 # YAML output for stormwise.py:
 
 # Variables x YAML section:
-printf "x:\n" > stormwise_tmdl.yaml;
+printf "x:\n" > stormwise_grnacr.yaml;
 for {i in I} {
-    printf "    %s:\n", i >> stormwise_tmdl.yaml;
+    printf "    %s:\n", i >> stormwise_grnacr.yaml;
     for {j in J} {
-        printf "        %s:\n", j >> stormwise_tmdl.yaml;
+        printf "        %s:\n", j >> stormwise_grnacr.yaml;
         for {k in KONJ[j]} {
-            printf "            %s: %10.4f\n", k,x[i,j,k].val >> stormwise_tmdl.yaml;
+            printf "            %s: %10.4f\n", k,x[i,j,k].val >> stormwise_grnacr.yaml;
         }
     }
 }
@@ -32,5 +32,5 @@ for {i in I} {
 #printf "\n" >> investment.csv;
 
 #close investment.csv;
-#display investment>stormwise_tmdl.out;
-#display x>>stormwise_tmdl.out;
+#display investment>stormwise_grnacr.out;
+#display x>>stormwise_grnacr.out;

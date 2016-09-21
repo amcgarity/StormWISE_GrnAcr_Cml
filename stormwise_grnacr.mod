@@ -1,6 +1,7 @@
-# StormWISE_TMDL model Cost minimization with multiple benefits as constraints 
+# StormWISE_GrnAcr model Cost minimization with multiple benefits as constraints 
+# using the Philadelphia Water Department Greened Acre as decision variables
 # In this model file, parameters s and u are calculated outside of AMPL, such
-# as by the stormwise_tmdl.py program.
+# as by the stormwise_grnacr.py program.
 
 set I;	# drainage zones
 set J; 	# land-use categories
