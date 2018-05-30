@@ -1,286 +1,150 @@
-# wingohocking.yaml
-I: {1_headwaters}
-J: {1_open_space, 2_low_intensity, 3_med_intensity, 4_high_intensity, 5_decid_forest, 6_shrub_scrub}
-K: {1_bioswale, 2_rain_garden, 3_tree_trench, 4_rain_barrel, 5_impervious_removal, 6_permeable_pavement, 7_green_roof}
-T: {1_volume, 2_sediment, 3_nitrogen, 4_phosphorous}
+# wingohocking.yaml based on EWRI 2016 7 subcatchment SWMM analysis
+I: {S1, S2, S3, S4, S5, S6, S7}
+J: {private, public}
+K: {1_rain_garden, 2_tree_trench}
+T: {volume}
 
 KONJ:
-    1_open_space: {
-        1_bioswale,
-        2_rain_garden
+    private: {
+        1_rain_garden,
+        2_tree_trench
     }
-    2_low_intensity: {
-        1_bioswale,
-        2_rain_garden,
-        3_tree_trench,
-        4_rain_barrel,
-        5_impervious_removal
-    }
-    3_med_intensity: {
-        1_bioswale,
-        2_rain_garden,
-        3_tree_trench,
-        4_rain_barrel,
-        5_impervious_removal,
-        6_permeable_pavement,
-        7_green_roof
-    }
-    4_high_intensity: {
-        2_rain_garden,
-        3_tree_trench,
-        4_rain_barrel,
-        5_impervious_removal,
-        6_permeable_pavement,
-        7_green_roof
-    }
-    5_decid_forest: null
-    6_shrub_scrub: {
-        1_bioswale,
-        2_rain_garden
+    public: {
+        1_rain_garden,
+        2_tree_trench
     }
 
-cost:        
-    1_bioswale:
-        1_open_space:        21686.93
-        2_low_intensity:     30670.22     
-        3_med_intensity:     38020.18
-        4_high_intensity:    null
-        5_decid_forest:      null
-        6_shrub_scrub:       21686.93
-    2_rain_garden:
-        1_open_space:        12360.27
-        2_low_intensity:     15490.01     
-        3_med_intensity:     47525.23
-        4_high_intensity:    20737.14
-        5_decid_forest:      null
-        6_shrub_scrub:       12360.27
-    3_tree_trench:
-        1_open_space:        null
-        2_low_intensity:     57040.34     
-        3_med_intensity:     69713.62
-        4_high_intensity:    83043.58
-        5_decid_forest:      null
-        6_shrub_scrub:       null
-    4_rain_barrel:
-        1_open_space:        null
-        2_low_intensity:     101653.22    
-        3_med_intensity:     75608.32
-        4_high_intensity:    90224.72
-        5_decid_forest:      null
-        6_shrub_scrub:       null
-    5_impervious_removal:
-        1_open_space:        null
-        2_low_intensity:     181322.55    
-        3_med_intensity:     100811.09 
-        4_high_intensity:    120299.63
-        5_decid_forest:      null
-        6_shrub_scrub:       null
-    6_permeable_pavement:
-        1_open_space:        null
-        2_low_intensity:     null    
-        3_med_intensity:     760403.64
-        4_high_intensity:    907402.91
-        5_decid_forest:      null
-        6_shrub_scrub:       null
-    7_green_roof:
-        1_open_space:        null
-        2_low_intensity:     null    
-        3_med_intensity:     1077238.49
-        4_high_intensity:    1285487.46
-        5_decid_forest:      null
-        6_shrub_scrub:       null
-export:
-    1_volume:
-        1_open_space:        1523.0
-        2_low_intensity:     2304.4    
-        3_med_intensity:     2975.4
-        4_high_intensity:    3989.1
-        5_decid_forest:      1140.9
-        6_shrub_scrub:       1523.0
-    2_sediment:
-        1_open_space:        372.1
-        2_low_intensity:     1030.4    
-        3_med_intensity:     874.7
-        4_high_intensity:    1239.2
-        5_decid_forest:      64.3 
-        6_shrub_scrub:       372.1
-    3_nitrogen:
-        1_open_space:        2.156
-        2_low_intensity:     2.646    
-        3_med_intensity:     6.729
-        4_high_intensity:    9.055
-        5_decid_forest:      0.384 
-        6_shrub_scrub:       2.156
-    4_phosphorous:
-        1_open_space:        0.263
-        2_low_intensity:     0.271    
-        3_med_intensity:     0.859
-        4_high_intensity:    1.023
-        5_decid_forest:      0.038 
-        6_shrub_scrub:       0.263
-area:
-    1_open_space:
-        1_headwaters:       198.2
-    2_low_intensity:
-        1_headwaters:       315.8
-    3_med_intensity:
-        1_headwaters:       613.2
-    4_high_intensity:
-        1_headwaters:       139.5   
-    5_decid_forest:
-        1_headwaters:       50.0   
-    6_shrub_scrub:
-        1_headwaters:       4.0
-eta:
-    1_volume:
-        1_bioswale:
-            1_headwaters:   0.25
-        2_rain_garden:
-            1_headwaters:   0.90
-        3_tree_trench:
-            1_headwaters:   0.90
-        4_rain_barrel:
-            1_headwaters:   0.90   
-        5_impervious_removal:
-            1_headwaters:   0.50
-        6_permeable_pavement:
-            1_headwaters:   0.90
-        7_green_roof:
-            1_headwaters:   0.90
-    2_sediment:
-        1_bioswale:
-            1_headwaters:   0.84
-        2_rain_garden:
-            1_headwaters:   0.71
-        3_tree_trench:
-            1_headwaters:   0.81
-        4_rain_barrel:
-            1_headwaters:   0.90   
-        5_impervious_removal:
-            1_headwaters:   0.50
-        6_permeable_pavement:
-            1_headwaters:   0.65
-        7_green_roof:
-            1_headwaters:   0.05
-    3_nitrogen:
-        1_bioswale:
-            1_headwaters:   0.20 
-        2_rain_garden:
-            1_headwaters:   0.60
-        3_tree_trench:
-            1_headwaters:   0.60 
-        4_rain_barrel:
-            1_headwaters:   0.90   
-        5_impervious_removal:
-            1_headwaters:   0.50
-        6_permeable_pavement:
-            1_headwaters:   0.82
-        7_green_roof:
-            1_headwaters:   0.82
-    4_phosphorous:
-        1_bioswale:
-            1_headwaters:   0.40
-        2_rain_garden:
-            1_headwaters:   0.70
-        3_tree_trench:
-            1_headwaters:   0.70
-        4_rain_barrel:
-            1_headwaters:   0.90   
-        5_impervious_removal:
-            1_headwaters:   0.50
-        6_permeable_pavement:
-            1_headwaters:   0.65
-        7_green_roof:
-            1_headwaters:   0.65      
-f:
-    1_bioswale:
-        1_open_space:
-            1_headwaters:   0.18
-        2_low_intensity:  
-            1_headwaters:   0.16   
-        3_med_intensity:
-            1_headwaters:   0.19
-        4_high_intensity:
-            1_headwaters:   null
-        5_decid_forest:
-            1_headwaters:   null
-        6_shrub_scrub:
-            1_headwaters:   0.18
-    2_rain_garden:
-        1_open_space:
-            1_headwaters:   0.82
-        2_low_intensity:
-            1_headwaters:   0.29
-        3_med_intensity:
-            1_headwaters:   0.15
-        4_high_intensity:
-            1_headwaters:   0.15
-        5_decid_forest:
-            1_headwaters:   null
-        6_shrub_scrub:
-            1_headwaters:   0.18
-    3_tree_trench:
-        1_open_space:
-            1_headwaters:   null
-        2_low_intensity:
-            1_headwaters:   0.25
-        3_med_intensity:
-            1_headwaters:   0.16
-        4_high_intensity:
-            1_headwaters:   0.20
-        5_decid_forest:
-            1_headwaters:   null
-        6_shrub_scrub:
-            1_headwaters:   null
-    4_rain_barrel:
-        1_open_space:
-            1_headwaters:   null
-        2_low_intensity:
-            1_headwaters:   0.25
-        3_med_intensity:
-            1_headwaters:   0.15
-        4_high_intensity:
-            1_headwaters:   0.20
-        5_decid_forest:
-            1_headwaters:   null
-        6_shrub_scrub:
-            1_headwaters:   null
-    5_impervious_removal:
-        1_open_space:
-            1_headwaters:   null
-        2_low_intensity:
-            1_headwaters:   0.05
-        3_med_intensity:
-            1_headwaters:   0.10
-        4_high_intensity:
-            1_headwaters:   0.10
-        5_decid_forest:
-            1_headwaters:   null
-        6_shrub_scrub:
-            1_headwaters:   null
-    6_permeable_pavement:
-        1_open_space:
-            1_headwaters:   null
-        2_low_intensity:
-            1_headwaters:   null
-        3_med_intensity:
-            1_headwaters:   0.10
-        4_high_intensity:
-            1_headwaters:   0.15
-        5_decid_forest:
-            1_headwaters:   null
-        6_shrub_scrub:
-            1_headwaters:   null
-    7_green_roof:
-        1_open_space:
-            1_headwaters:   null
-        2_low_intensity:
-            1_headwaters:   null
-        3_med_intensity:
-            1_headwaters:   0.15
-        4_high_intensity:
-            1_headwaters:   0.20
-        5_decid_forest:
-            1_headwaters:   null
-        6_shrub_scrub:
-            1_headwaters:   null
+# Runoff volume reduction slopes by I J and K
+s:
+  S1:
+    private:
+      1_rain_garden:  0.397
+      2_tree_trench:  0.543
+    public:
+      1_rain_garden:  0.397
+      2_tree_trench:  0.543
+  S2:
+    private:
+      1_rain_garden:  0.061
+      2_tree_trench:  0.097
+    public:
+      1_rain_garden:  0.061
+      2_tree_trench:  0.097
+  S3:
+    private:
+      1_rain_garden:  0.079
+      2_tree_trench:  0.189
+    public:
+      1_rain_garden:  0.079
+      2_tree_trench:  0.189
+  S4:
+    private:
+      1_rain_garden:  0.058
+      2_tree_trench:  0.186
+    public:
+      1_rain_garden:  0.058
+      2_tree_trench:  0.186
+  S5:
+    private:
+      1_rain_garden:  0.035
+      2_tree_trench:  0.073
+    public:
+      1_rain_garden:  0.035
+      2_tree_trench:  0.073
+  S6:
+    private:
+      1_rain_garden:  0.021
+      2_tree_trench:  0.051
+    public:
+      1_rain_garden:  0.021
+      2_tree_trench:  0.051
+  S7:
+    private:
+      1_rain_garden:  0.040
+      2_tree_trench:  0.111
+    public:
+      1_rain_garden:  0.040
+      2_tree_trench:  0.111
+
+# log-log cost function parameters to obtain cost per greened acre
+a:
+  private:  4.98
+  public:   5.25
+b:
+  private: 0.24
+  public:  0.24
+
+# GI Units (greened acres) per GI Installation:
+ga_per_unit_by_K:
+  1_rain_garden:  0.747
+  2_tree_trench:  0.936
+
+# Contributing impervious area (acres) per GI Installation
+contrib_imp_a_by_K:
+  1_rain_garden: 0.482
+  2_tree_trench: 0.616
+
+# Fraction deployable by land use for each GI technology:
+f_by_J_and_K:
+  1_rain_garden:
+    private:   0.25
+    public:    0.75
+  2_tree_trench:
+    private:   0.10
+    public:    0.50
+f_by_I_and_J:
+  S1:
+    private: 0.70
+    public: 0.30
+  S2:
+    private: 0.70
+    public: 0.30
+  S3:
+    private: 0.70
+    public: 0.30
+  S4:
+    private: 0.70
+    public: 0.30
+  S5:
+    private: 0.70
+    public: 0.30
+  S6:
+    private: 0.70
+    public: 0.30
+  S7:
+    private: 0.70
+    public: 0.30
+
+# area of each subcatchment:
+subcat_area_by_I:
+  S1:      464.6
+  S2:      183.9
+  S3:      605.1
+  S4:      302.6
+  S5:      733.4
+  S6:      259.2
+  S7:      420.8
+
+# impervious fraction of each subcatchment by landuse:
+impfr_by_I_and_J:
+  S1:
+    private:      0.40
+    public:       0.40
+  S2:
+    private:      0.90
+    public:       0.90
+  S3:
+    private:      0.70
+    public:       0.70
+  S4:
+    private:      0.80
+    public:       0.80
+  S5:
+    private:      0.34
+    public:       0.34
+  S6:
+    private:      0.90
+    public:       0.90
+  S7:
+    private:      0.60
+    public:       0.60
